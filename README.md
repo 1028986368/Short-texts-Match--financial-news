@@ -1,2 +1,24 @@
-# jolly_zhang
-Short Text Match -- Financial News
+# 短文本匹配————财经新闻
+## 使用说明
+### 1、判断一条新闻是否已经在已有的新闻标题库中
+默认为新闻标题库为1月~7月的财经新闻，若想要更换，需要重新训练
+
+
+### 2、判断两条新闻是否相同
+
+## 训练说明
+
+
+
+### 数据说明
+
+
+**环境**
+```
+h5py==2.10.0
+simpletransformers==0.32.3
+tensorflow-gpu==2.0
+transformers==4.21.0
+bert4keras==0.11.3
+torch==1.12.0
+```
