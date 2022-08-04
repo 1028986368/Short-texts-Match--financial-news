@@ -16,7 +16,10 @@ T1vsT2(title1,title2,usage) #usage='simcse'or'gpt2_base'or'gpt2_fintune'
 ```
 
 ## 训练说明
-
+```
+# 修改预训练模型路径，数据路径
+python train.py
+```
 
 ### 预训练模型
 1、gpt2small_chinese  
