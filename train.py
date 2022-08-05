@@ -57,6 +57,7 @@ def samples_train(data):
         for j in data_belong.index:
             ll.append((data_sample['title'][i],data['title'][j],0)) 
     random.shuffle(ll)
+    return ll
 
 # 建立分词器
 def get_tokenizer(dict_path, pre_tokenize=None):
@@ -165,7 +166,7 @@ if __name__ == "__main__":
         config_path,
         checkpoint_path,
         pooling=pooling,
-        dropout_rate=dropout_rate）
+        dropout_rate=dropout_rate)
   # 语料id化
     all_names, all_weights, all_token_ids, all_labels = [], [], [], []
     train_token_ids = []
