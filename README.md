@@ -3,7 +3,7 @@
 ### 1、判断一条新闻是否已经在已有的新闻标题库中
 默认为新闻标题库为1月~7月的财经新闻，若想要更换，需要重新训练
 ```
-python match.py
+python main.py
 # usage='simcse' or 'gpt2_base' or 'gpt2_finetune' ;
 # threshold=[0,1]
 Match(title,'simcse',0.77)
@@ -11,7 +11,7 @@ Match(title,'simcse',0.77)
 
 ### 2、判断两条新闻是否相同
 ```
-python match.py
+python main.py
 T1vsT2(title1,title2,usage) #usage='simcse'or'gpt2_base'or'gpt2_fintune'
 ```
 
