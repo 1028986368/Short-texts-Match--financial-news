@@ -140,8 +140,10 @@ class data_generator(DataGenerator):
                 batch_token_ids = []
 
 if __name__ == "__main__":
+    import os
+    os.chdir('/content/drive')
   # 构建训练数据集
-    data_path = '/content/drive/MyDrive/datayes.xlsx'
+    data_path = '/MyDrive/datayes.xlsx'
     data = load_data(data_path)
     ll = samples_train(data)
     dataset = {'STS-B-train':ll[:100000],'STS-B-test':ll[100000:110000],'STS-B-valid':ll[110000:]}
@@ -154,9 +156,9 @@ if __name__ == "__main__":
     'SimBERT': 'chinese_simbert_L-12_H-768_A-12',
     'SimBERT-tiny': 'chinese_simbert_L-4_H-312_A-12',
     'SimBERT-small': 'chinese_simbert_L-6_H-384_A-12'}[model_type]
-    config_path = '/content/drive/MyDrive/%s/bert_config.json' % model_name
-    checkpoint_path = '/content/drive/MyDrive/%s/bert_model.ckpt' % model_name
-    dict_path = '/content/drive/MyDrive/%s/vocab.txt' % model_name
+    config_path = '/MyDrive/%s/bert_config.json' % model_name
+    checkpoint_path = '/MyDrive/%s/bert_model.ckpt' % model_name
+    dict_path = '/MyDrive/%s/vocab.txt' % model_name
   # 建立分词器
     tokenizer = get_tokenizer(dict_path)
     encoder = get_encoder(
@@ -187,4 +189,4 @@ if __name__ == "__main__":
     encoder.fit(
     train_generator.forfit(),steps_per_epoch=len(train_generator), epochs=1)
 
-    # save_model(encoder,'/content/drive/MyDrive/encoder_simcse.h5')  # 将训练好的模型保存为HDF5文件
+    # save_model(encoder,'/MyDrive/encoder_simcse.h5')  # 将训练好的模型保存为HDF5文件
