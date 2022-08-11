@@ -156,7 +156,7 @@ def similar_TF(title,usage='simcse',index1=None):
 
 
 
-    elif usage == 'gpt2_base':
+    if usage == 'gpt2_base':
         TitleEmbeddingTensor,embeddigs,tokenizer = bulid_model_gpt2(0)
         input = title
         preprocessedinput = input['title']
@@ -191,8 +191,8 @@ def similar_TF(title,usage='simcse',index1=None):
         title_dict = sim_cos_simcse(title['title'],kk) #{}
         title_dict = dict(zip(data_belong.index,title_dict))
 
-        title_dict = list(title_dict.items())
-        title_dict.sort(key=lambda x:x[1],reverse=True)
+    title_dict = list(title_dict.items())
+    title_dict.sort(key=lambda x:x[1],reverse=True)
 
     if title_dict[0][1]>0.99:
         fix(title,title_dict)
