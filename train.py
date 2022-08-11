@@ -179,9 +179,9 @@ if __name__ == "__main__":
         train_token_ids.extend(a_token_ids)
         train_token_ids.extend(b_token_ids)
 
-    if task_name != 'PAWSX':
-        np.random.shuffle(train_token_ids)
-        train_token_ids = train_token_ids[:10000]
+    # 根据实验，数据量为10000时效果较好
+    np.random.shuffle(train_token_ids)
+    train_token_ids = train_token_ids[:10000]
   
   # SimCSE训练
     encoder.summary()
